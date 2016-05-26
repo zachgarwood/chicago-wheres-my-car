@@ -7,7 +7,7 @@ export default Model.extend({
   plate: attr(),
   state: attr(),
   style: attr(),
-  tow_date: attr('date'),
-  towed_facility_phone: attr(),
-  towed_to_address: attr(),
+  towDate: attr('date'),
+  towedFacilityPhone: attr(),
+  towedToAddress: attr(),
 });
