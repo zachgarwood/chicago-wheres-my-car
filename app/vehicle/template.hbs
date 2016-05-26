@@ -1,6 +1,19 @@
-<h4>vehicle</h4>
-<ol>
-    {{#each model as |vehicle|}}
-        <li>{{vehicle.id }} - {{vehicle.color}} {{vehicle.make}}</li>
-    {{/each}}
-</ol>
+<h3>Vehicle</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Date Towed</th>
+            <th>License Plate</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each model as |vehicle|}}
+            <tr>
+                <td>{{vehicle.towDate}}</td>
+                <td>{{vehicle.state}} {{vehicle.plate}}</td>
+                <td>{{vehicle.color}} {{vehicle.make}} {{vehicle.style}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
