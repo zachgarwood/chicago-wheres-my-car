@@ -1,6 +1,8 @@
 import Transform from 'ember-data/transform';
 import _object from 'lodash/object';
 
+// Source:
+// http://www.dmv.state.va.us/webdoc/pdf/vsa-6color.pdf
 const COLOR_CODES = {
   'BGE': 'beige',
   'BLK': 'black',
@@ -20,6 +22,7 @@ const COLOR_CODES = {
   'LGR': 'light green',
   'MAR': 'maroon',
   'ONG': 'orange',
+  'PLE': 'purple',
   'PNK': 'pink',
   'RED': 'red',
   'SIL': 'silver',

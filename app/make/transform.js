@@ -1,6 +1,10 @@
 import Transform from 'ember-data/transform';
 import _object from 'lodash/object';
 
+// Sources:
+// https://dps.mn.gov/divisions/sfm/programs-services/Documents/Juvenile%20FireSetter%20Program/VehicleMake.PDF
+// http://mmucc.us/ncic-codes-motor-vehicle-makes
+// http://www.txdmv.gov/publications/doc_download/917-vtr-249-standard-abbreviations-for-vehicle-makes-and-body-styles
 const MAKE_CODES = {
   'ACUR': "Acura",
   'AUDI': "Audi",
@@ -54,6 +58,7 @@ const MAKE_CODES = {
   'PORS': "Porsche",
   'PTRB': "Peterbilt Motors Co.",
   'RNK': "Rinker Boat Co., Inc.",
+  'ROV': "Rover",
   'SAA': "Saab",
   'SCIO': "Scion",
   'SMRT': "Smart Car",
@@ -63,6 +68,7 @@ const MAKE_CODES = {
   'SUZI': "Suzuki",
   'TOYT': "Toyota",
   'TRIU': "Triumph Motor Co.",
+  'VESP': "Vespa",
   'VOLK': "Volkswagen",
   'VOLV': "Volvo",
   'YAMA': "Yamaha",
