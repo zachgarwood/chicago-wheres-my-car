@@ -6,7 +6,7 @@ export default Model.extend({
   make: attr('make'),
   plate: attr(),
   state: attr(),
-  style: attr(),
+  style: attr('style'),
   towDate: attr('date'),
   towedFacilityPhone: attr(),
   towedToAddress: attr(),
