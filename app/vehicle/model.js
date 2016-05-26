@@ -3,7 +3,7 @@ import attr from 'ember-data/attr';
 
 export default Model.extend({
   color: attr('color'),
-  make: attr(),
+  make: attr('make'),
   plate: attr(),
   state: attr(),
   style: attr(),
