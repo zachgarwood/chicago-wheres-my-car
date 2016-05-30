@@ -8,11 +8,11 @@
         </tr>
     </thead>
     <tbody>
-        {{#each model as |vehicle|}}
+        {{#each sortedVehicles as |vehicle|}}
             <tr>
                 <td>{{moment-from-now vehicle.date}}</td>
-                <td>{{vehicle.state}} {{vehicle.plate}}</td>
-                <td>{{vehicle.color}} {{vehicle.make}} {{vehicle.style}}</td>
+                <td>{{vehicle.licensePlate}}</td>
+                <td>{{vehicle.description}}</td>
             </tr>
         {{/each}}
     </tbody>
