@@ -10,7 +10,7 @@
     <tbody>
         {{#each model as |vehicle|}}
             <tr>
-                <td>{{moment-from-now vehicle.towDate}}</td>
+                <td>{{moment-from-now vehicle.date}}</td>
                 <td>{{vehicle.state}} {{vehicle.plate}}</td>
                 <td>{{vehicle.color}} {{vehicle.make}} {{vehicle.style}}</td>
             </tr>

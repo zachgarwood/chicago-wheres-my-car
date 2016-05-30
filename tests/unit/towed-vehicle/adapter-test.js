@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('adapter:vehicle', 'Unit | Adapter | vehicle', {
+moduleFor('adapter:towed-vehicle', 'Unit | Adapter | towed-vehicle', {
   // Specify the other units that are required for this test.
   // needs: ['serializer:foo']
 });
