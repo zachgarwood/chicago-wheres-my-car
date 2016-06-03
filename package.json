@@ -41,7 +41,7 @@
     "ember-lodash": "0.0.7",
     "ember-moment": "6.1.0",
     "ember-resolver": "^2.0.3",
-    "ember-socrata": "0.1.0",
+    "ember-socrata": "0.2.0",
     "emberx-select": "2.1.2",
     "loader.js": "^4.0.1",
     "soda-js": "^0.2.2"
