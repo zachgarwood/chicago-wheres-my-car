@@ -1,4 +1,28 @@
 <h3>Vehicle</h3>
+<div>
+    {{#x-select value=last_seen as |select|}}
+        {{#select.option value=today}}Today{{/select.option}}
+        {{#select.option value=yesterday}}Yesterday{{/select.option}}
+        {{#select.option value=daysAgo}}Last week{{/select.option}}
+        {{#select.option value=weeksAgo}}Weeks ago{{/select.option}}
+        {{#select.option value=monthsAgo}}Months ago{{/select.option}}
+        {{#select.option value=aLongTimeAgo}}A Long time ago{{/select.option}}
+    {{/x-select}}
+</div>
+<div>
+    {{#x-select value=color as |select|}}
+        <option>Color</option>
+        {{#select.option value='Blue'}}Blue{{/select.option}}
+        {{#select.option value='Gray'}}Gray{{/select.option}}
+    {{/x-select}}
+</div>
+<div>
+    {{#x-select value=make as |select|}}
+        <option>Make</option>
+        {{#select.option value='Honda'}}Honda{{/select.option}}
+        {{#select.option value='Toyota'}}Toyota{{/select.option}}
+    {{/x-select}}
+</div>
 <table>
     <thead>
         <tr>
@@ -8,11 +32,15 @@
         </tr>
     </thead>
     <tbody>
-        {{#each sortedVehicles as |vehicle|}}
+        {{#each model as |vehicle|}}
             <tr>
-                <td>{{moment-from-now vehicle.date}}</td>
+                <td>{{moment-calendar vehicle.date}}</td>
                 <td>{{vehicle.licensePlate}}</td>
                 <td>{{vehicle.description}}</td>
+            </tr>
+        {{else}}
+            <tr>
+                <td colspan=3>No Results</td>
             </tr>
         {{/each}}
     </tbody>
