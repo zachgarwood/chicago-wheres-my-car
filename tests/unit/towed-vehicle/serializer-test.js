@@ -2,7 +2,13 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('towed-vehicle', 'Unit | Serializer | towed-vehicle', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:towed-vehicle', 'transform:color', 'transform:make', 'transform:style']
+  needs: [
+    'serializer:towed-vehicle',
+    'transform:color',
+    'transform:make',
+    'transform:state',
+    'transform:style',
+  ]
 });
 
 // Replace this with your real tests.
