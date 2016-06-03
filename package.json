@@ -1,7 +1,7 @@
 {
-  "name": "towing",
+  "name": "chicago-wheres-my-car",
   "version": "0.0.0",
-  "description": "Small description for towing goes here",
+  "description": "A web app for finding towed or relocated cars in Chicago",
   "private": true,
   "directories": {
     "doc": "doc",

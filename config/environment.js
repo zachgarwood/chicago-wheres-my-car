@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'towing',
+    modulePrefix: 'chicago-wheres-my-car',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
