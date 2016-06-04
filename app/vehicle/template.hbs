@@ -20,8 +20,9 @@
 <div>
     {{#x-select value=make as |select|}}
         <option>Make</option>
-        {{#select.option value='Honda'}}Honda{{/select.option}}
-        {{#select.option value='Toyota'}}Toyota{{/select.option}}
+        {{#each makeCodes as |make|}}
+            {{#select.option value=make.code}}{{make.label}}{{/select.option}}
+        {{/each}}
     {{/x-select}}
 </div>
 <table>

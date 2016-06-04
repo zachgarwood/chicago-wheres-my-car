@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import moment from 'moment';
 import COLOR_CODES from '../color/codes';
+import MAKE_CODES from '../make/codes';
 
 export default Ember.Controller.extend({
   queryParams: [ 'color', 'last_seen', 'make' ],
@@ -23,6 +24,15 @@ export default Ember.Controller.extend({
     let codes = [];
     keys.forEach(function(key) {
       codes.push({ 'code': key, 'label': COLOR_CODES[key] }); 
+    });
+    return codes;
+  }),
+
+  makeCodes: Ember.computed(function() {
+    let keys = Object.keys(MAKE_CODES);
+    let codes = [];
+    keys.forEach(function(key) {
+      codes.push({ 'code': key, 'label': MAKE_CODES[key] }); 
     });
     return codes;
   }),

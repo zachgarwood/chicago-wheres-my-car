@@ -1,4 +1,5 @@
 import COLOR_CODES from '../color/codes';
+import MAKE_CODES from '../make/codes';
 import Ember from 'ember';
 
 String.prototype.ucwords = function() {
@@ -28,7 +29,8 @@ export default Ember.Route.extend({
       towedVehicleQuery.where.push('color = "' + params.color + '"');
     }
     if (params.make) {
-      relocatedVehicleQuery.where.push('make = "' + params.make + '"');
+      let make = (params.make in MAKE_CODES) ? MAKE_CODES[params.make] : params.make;
+      relocatedVehicleQuery.where.push('make = "' + make + '"');
       towedVehicleQuery.where.push('make = "' + params.make + '"');
     }
     return Ember.RSVP.hash({
