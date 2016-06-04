@@ -12,8 +12,9 @@
 <div>
     {{#x-select value=color as |select|}}
         <option>Color</option>
-        {{#select.option value='Blue'}}Blue{{/select.option}}
-        {{#select.option value='Gray'}}Gray{{/select.option}}
+        {{#each colorCodes as |color|}}
+            {{#select.option value=color.code}}{{color.label}}{{/select.option}}
+        {{/each}}
     {{/x-select}}
 </div>
 <div>
@@ -32,7 +33,7 @@
         </tr>
     </thead>
     <tbody>
-        {{#each model as |vehicle|}}
+        {{#each sortedVehicles as |vehicle|}}
             <tr>
                 <td>{{moment-calendar vehicle.date}}</td>
                 <td>{{vehicle.licensePlate}}</td>
