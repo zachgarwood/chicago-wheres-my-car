@@ -3,12 +3,18 @@
     {{#x-select value=last_seen as |select|}}
         {{#select.option value=today}}Today{{/select.option}}
         {{#select.option value=yesterday}}Yesterday{{/select.option}}
-        {{#select.option value=daysAgo}}Last week{{/select.option}}
+        {{#select.option value=daysAgo}}Days ago{{/select.option}}
         {{#select.option value=weeksAgo}}Weeks ago{{/select.option}}
         {{#select.option value=monthsAgo}}Months ago{{/select.option}}
         {{#select.option value=aLongTimeAgo}}A Long time ago{{/select.option}}
     {{/x-select}}
 </div>
+    {{#x-select value=state as |select|}}
+        <option>State</option>
+        {{#each stateCodes as |state|}}
+            {{#select.option value=state.code}}{{state.label}}{{/select.option}}
+        {{/each}}
+    {{/x-select}}
 <div>
     {{#x-select value=color as |select|}}
         <option>Color</option>
@@ -36,8 +42,12 @@
     <tbody>
         {{#each sortedVehicles as |vehicle|}}
             <tr>
-                <td>{{moment-calendar vehicle.date}}</td>
-                <td>{{vehicle.licensePlate}}</td>
+                <td>{{moment-from-now vehicle.date}}</td>
+                <td>
+                    {{#link-to vehicle.constructor.modelName vehicle}}
+                        {{vehicle.licensePlate}}
+                    {{/link-to}}
+                </td>
                 <td>{{vehicle.description}}</td>
             </tr>
         {{else}}
