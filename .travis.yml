@@ -5,6 +5,10 @@ node_js:
 
 sudo: false
 
+branches:
+  only:
+    - master
+
 cache:
   directories:
     - node_modules
@@ -20,3 +24,7 @@ install:
 
 script:
   - npm test
+
+after_success:
+  - ember build -prod
+  - firebase deploy --token "${FIREBASE_TOKEN}"
