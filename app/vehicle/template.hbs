@@ -1,59 +1,69 @@
-<h3>Vehicle</h3>
-<div>
-    {{#x-select value=last_seen as |select|}}
-        {{#select.option value=today}}Today{{/select.option}}
-        {{#select.option value=yesterday}}Yesterday{{/select.option}}
-        {{#select.option value=daysAgo}}Days ago{{/select.option}}
-        {{#select.option value=weeksAgo}}Weeks ago{{/select.option}}
-        {{#select.option value=monthsAgo}}Months ago{{/select.option}}
-        {{#select.option value=aLongTimeAgo}}A Long time ago{{/select.option}}
-    {{/x-select}}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="form-group col-sm-6 col-md-6">
+            <label for="state">State Licensed</label>
+            {{#x-select id="state" class="form-control" value=state as |select|}}
+                {{#each stateCodes as |state|}}
+                    {{#select.option value=state.code}}{{state.label}}{{/select.option}}
+                {{/each}}
+            {{/x-select}}
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <label for="last-seen">Last Seen</label>
+            {{#x-select id="last-seen" class="form-control" value=last_seen as |select|}}
+                {{#select.option value=today}}Today{{/select.option}}
+                {{#select.option value=yesterday}}Yesterday{{/select.option}}
+                {{#select.option value=daysAgo}}Days ago{{/select.option}}
+                {{#select.option value=weeksAgo}}Weeks ago{{/select.option}}
+                {{#select.option value=monthsAgo}}Months ago{{/select.option}}
+                {{#select.option value=aLongTimeAgo}}A Long time ago{{/select.option}}
+            {{/x-select}}
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <label for="make">Make</label>
+            {{#x-select id="make" class="form-control" value=make as |select|}}
+                <option></option>
+                {{#each makeCodes as |make|}}
+                    {{#select.option value=make.code}}{{make.label}}{{/select.option}}
+                {{/each}}
+            {{/x-select}}
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <label for="color">Color</label>
+            {{#x-select id="color" class="form-control" value=color as |select|}}
+                <option></option>
+                {{#each colorCodes as |color|}}
+                    {{#select.option value=color.code}}{{color.label}}{{/select.option}}
+                {{/each}}
+            {{/x-select}}
+        </div>
+    </div>
 </div>
-    {{#x-select value=state as |select|}}
-        <option>State</option>
-        {{#each stateCodes as |state|}}
-            {{#select.option value=state.code}}{{state.label}}{{/select.option}}
-        {{/each}}
-    {{/x-select}}
-<div>
-    {{#x-select value=color as |select|}}
-        <option>Color</option>
-        {{#each colorCodes as |color|}}
-            {{#select.option value=color.code}}{{color.label}}{{/select.option}}
-        {{/each}}
-    {{/x-select}}
-</div>
-<div>
-    {{#x-select value=make as |select|}}
-        <option>Make</option>
-        {{#each makeCodes as |make|}}
-            {{#select.option value=make.code}}{{make.label}}{{/select.option}}
-        {{/each}}
-    {{/x-select}}
-</div>
-<table>
-    <thead>
-        <tr>
-            <th>Date Towed</th>
-            <th>License Plate</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each sortedVehicles as |vehicle|}}
+<div class="table-responsive panel panel-default">
+    <table class="table table-striped table-hover">
+        <thead>
             <tr>
-                <td>{{moment-from-now vehicle.date}}</td>
-                <td>
-                    {{#link-to vehicle.constructor.modelName vehicle}}
-                        {{vehicle.licensePlate}}
-                    {{/link-to}}
-                </td>
-                <td>{{vehicle.description}}</td>
+                <th>License Plate</th>
+                <th>Last Seen</th>
+                <th>Description</th>
             </tr>
-        {{else}}
-            <tr>
-                <td colspan=3>No Results</td>
-            </tr>
-        {{/each}}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {{#each sortedVehicles as |vehicle|}}
+                <tr>
+                    <th>
+                        {{#link-to vehicle.constructor.modelName vehicle}}
+                            {{vehicle.licensePlate}}
+                        {{/link-to}}
+                    </th>
+                    <td>{{moment-from-now vehicle.date}}</td>
+                    <td>{{vehicle.description}}</td>
+                </tr>
+            {{else}}
+                <tr class="danger text-center">
+                    <td colspan="3">No Results</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
