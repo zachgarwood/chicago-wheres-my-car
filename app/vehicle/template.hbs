@@ -57,7 +57,13 @@
                         {{/link-to}}
                     </th>
                     <td>{{moment-from-now vehicle.date}}</td>
-                    <td>{{vehicle.description}}</td>
+                    <td>
+                        {{#if vehicle.description}}
+                            {{vehicle.description}}
+                        {{else}}
+                            <em>no description</em>
+                        {{/if}}
+                    </td>
                 </tr>
             {{else}}
                 <tr class="danger text-center">
