@@ -1,0 +1,17 @@
+// Source for colors
+// http://www.colourlovers.com/palette/580657/Flag_of_Chicago
+$chicago-blue: #b3ddf2;
+$chicago-red: #f00;
+
+$tinted-chicago-blue: #dff0f9;
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: $chicago-blue;
+}
+.table-hover > tbody > tr:hover {
+  background-color: $tinted-chicago-blue;
+}
+.form-control:focus {
+  border-color: $chicago-blue;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(179, 221, 242, .6)
+}
