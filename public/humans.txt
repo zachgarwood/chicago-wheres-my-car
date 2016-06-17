@@ -1,0 +1,8 @@
+/* TEAM */
+Developer: Zach Garwood <iam@zachgarwood.com> (http://zachgarwood.com/)
+Location: Chicago, IL
+
+/* SITE */
+Source: https://github.com/zachgarwood/chicago-wheres-my-car
+Framework: Ember (http://emberjs.com/)
+Data: City of Chicago Open Data (http://data.cityofchicago.org/)
