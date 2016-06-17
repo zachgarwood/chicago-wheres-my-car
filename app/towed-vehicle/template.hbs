@@ -1,7 +1,43 @@
-<h3>Your vehicle was towed!</h3>
-{{model.id}}
-{{model.date}}
-{{model.description}}
-{{model.licensePlate}}
-{{model.towedToAddress}}
-<a href="tel:{{model.towFacilityPhone}}">{{model.towFacilityPhone}}</a>
+<div class="panel panel-default">
+    <div class="panel-heading text-center"><h2>This vehicle was towed</h2></div>
+    <div class="panel-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Service Request Number</td>
+                    <td>{{model.id}}</td>
+                </tr>
+                <tr>
+                    <td>Date Towed</td>
+                    <td>{{moment-calendar model.date}}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>{{model.description}}</td>
+                </tr>
+                <tr>
+                    <td>License Plate</td>
+                    <td>{{model.licensePlate}}</td>
+                </tr>
+                <tr>
+                    <td>Towing Facility's Phone</td>
+                    <td>
+                        <a href="tel:{{model.towFacilityPhone}}">{{model.towFacilityPhone}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Towed to</td>
+                    <td>{{model.towedToAddress}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a
+                href="https://www.google.com/maps/place/{{model.towedToAddress}}"
+                target="_blank"
+            >
+                See map
+            </a>
+        </div>
+    </div>
+</div>
