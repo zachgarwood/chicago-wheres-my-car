@@ -8,7 +8,7 @@ export default VehicleModel.extend({
 
   relocatedReason: attr(),
 
-  relocatedFromAddressNumber: attr(),
+  relocatedFromAddressNumber: attr('number'),
   relocatedFromStreetDirection: attr(),
   relocatedFromStreetName: attr(),
   relocatedFromSuffix: attr(),
@@ -28,7 +28,7 @@ export default VehicleModel.extend({
     }
   ),
 
-  relocatedToAddressNumber: attr(),
+  relocatedToAddressNumber: attr('number'),
   relocatedToDirection: attr(),
   relocatedToStreetName: attr(),
   relocatedToSuffix: attr(),

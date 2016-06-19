@@ -1,13 +1,24 @@
 <div class="container">
-    <div class="page-header text-center">
-        <h1>
-            {{#link-to 'vehicle'}}
-                Chicago, Where's My Car?
-            {{/link-to}}
-        </h1>
-    </div>
-
-    <div class="container-fluid">
-        {{outlet}}
+    <div class="jumbotron text-center">
+        <h1><a href="/">Chicago, Where's My Car?</a></h1>
     </div>
 </div>
+<div class="container">
+    {{outlet}}
+</div>
+<footer class="container">
+    <ul class="well well-sm text-center list-inline">
+        <li>
+            <small>
+                <a href="http://zachgarwood.com/" target="_blank">Zach Garwood</a>
+            </small>
+        </li>
+        <li>
+            <small>
+                <a href="https://data.cityofchicago.org/" target="_blank">
+                    City of Chicago Open Data
+                </a>
+            </small>
+        </li>
+    </ul>
+</footer>

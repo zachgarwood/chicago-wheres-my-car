@@ -1,8 +1,57 @@
-<h3>Your vehicle was relocated!</h3>
-{{model.id}}
-{{model.date}}
-{{model.description}}
-{{model.licensePlate}}
-{{model.relocatedFrom}}
-{{model.relocatedTo}}
-{{model.relocatedReason}}
+<div class="panel panel-default">
+    <div class="panel-heading text-center"><h2>This vehicle was relocated</h2></div>
+    <div class="panel-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Service Request Number</td>
+                    <td>{{model.id}}</td>
+                </tr>
+                <tr>
+                    <td>Date Relocated</td>
+                    <td>{{moment-calendar model.date}}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>
+                        {{#if model.description}}
+                            {{model.description}}
+                        {{else}}
+                            <em>no description</em>
+                        {{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>License Plate</td>
+                    <td>
+                        {{#if (lte model.licensePlate.length 2)}}
+                            {{model.licensePlate}} <em>unknown</em>
+                        {{else}}
+                            {{model.licensePlate}}
+                        {{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reason for Relocation</td>
+                    <td>{{model.relocatedReason}}</td>
+                </tr>
+                <tr>
+                    <td>Moved from</td>
+                    <td>{{model.relocatedFrom}}</td>
+                </tr>
+                <tr>
+                    <td>Moved to</td>
+                    <td>{{model.relocatedTo}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a
+                href="https://www.google.com/maps/dir/{{model.relocatedFrom}}/{{model.relocatedTo}}"
+                target="_blank"
+            >
+                See map
+            </a>
+        </div>
+    </div>
+</div>
