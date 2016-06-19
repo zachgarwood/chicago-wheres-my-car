@@ -53,7 +53,11 @@
                 <tr>
                     <th>
                         {{#link-to vehicle.constructor.modelName vehicle}}
-                            {{vehicle.licensePlate}}
+                            {{#if (lte vehicle.licensePlate.length 2)}}
+                                {{vehicle.licensePlate}} <em>unknown</em>
+                            {{else}}
+                                {{vehicle.licensePlate}}
+                            {{/if}}
                         {{/link-to}}
                     </th>
                     <td>{{moment-from-now vehicle.date}}</td>

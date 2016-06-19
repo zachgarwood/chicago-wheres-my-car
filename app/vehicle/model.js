@@ -14,6 +14,6 @@ export default Model.extend({
     return [ color, this.get('make'), this.get('style') ].join(' ').trim();
   }),
   licensePlate: Ember.computed('state', 'plate', function() {
-    return [ this.get('state'), this.get('plate') ].join(' ');
+    return [ this.get('state'), this.get('plate') ].join(' ').trim();
   }),
 });

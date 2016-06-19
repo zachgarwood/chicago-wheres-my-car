@@ -13,11 +13,23 @@
                 </tr>
                 <tr>
                     <td>Description</td>
-                    <td>{{model.description}}</td>
+                    <td>
+                        {{#if model.description}}
+                            {{model.description}}
+                        {{else}}
+                            <em>no description</em>
+                        {{/if}}
+                    </td>
                 </tr>
                 <tr>
                     <td>License Plate</td>
-                    <td>{{model.licensePlate}}</td>
+                    <td>
+                        {{#if (lte model.licensePlate.length 2)}}
+                            {{model.licensePlate}} <em>unknown</em>
+                        {{else}}
+                            {{model.licensePlate}}
+                        {{/if}}
+                    </td>
                 </tr>
                 <tr>
                     <td>Reason for Relocation</td>
