@@ -24,7 +24,7 @@ export default VehicleModel.extend({
         this.get('relocatedFromStreetName'),
         this.get('relocatedFromSuffix'),
       ];
-      return address.join(' ');
+      return address.join(' ').trim();
     }
   ),
 
@@ -44,7 +44,7 @@ export default VehicleModel.extend({
         this.get('relocatedToStreetName'),
         this.get('relocatedToSuffix'),
       ];
-      return address.join(' ');
+      return address.join(' ').trim();
     }
   ),
 });

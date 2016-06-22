@@ -6,7 +6,7 @@ import STATE_CODES from '../state/codes';
 
 export default Ember.Controller.extend({
   queryParams: [ 'color', 'last_seen', 'make', 'state' ],
-  last_seen: moment().subtract(1, 'days').startOf('day').toISOString(),
+  last_seen: moment().startOf('day').toISOString(),
   color: null,
   make: null,
   state: 'IL',
