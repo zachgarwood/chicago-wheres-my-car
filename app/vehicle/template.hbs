@@ -52,7 +52,7 @@
             {{#each sortedVehicles as |vehicle|}}
                 <tr>
                     <th>
-                        {{#link-to vehicle.constructor.modelName vehicle}}
+                        {{#link-to vehicle.modelName vehicle}}
                             {{#if (lte vehicle.licensePlate.length 2)}}
                                 {{vehicle.licensePlate}} <em>unknown</em>
                             {{else}}

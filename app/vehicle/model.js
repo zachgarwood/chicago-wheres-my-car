@@ -16,4 +16,5 @@ export default Model.extend({
   licensePlate: Ember.computed('state', 'plate', function() {
     return [ this.get('state'), this.get('plate') ].join(' ').trim();
   }),
+  modelName: Ember.computed.alias('constructor.modelName'),
 });
