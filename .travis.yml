@@ -1,9 +1,8 @@
----
+sudo: false
+
 language: node_js
 node_js:
   - "6"
-
-sudo: false
 
 branches:
   only:
@@ -12,6 +11,7 @@ branches:
 cache:
   directories:
     - $HOME/.npm
+    - $HOMT/.cache
 
 before_install:
   - npm config set spin false
@@ -26,6 +26,10 @@ install:
 script:
   - npm test
 
-after_success:
+before_deploy:
   - ember build -prod
-  - firebase deploy --token "${FIREBASE_TOKEN}"
+
+deploy:
+  provider: firebase
+  token:
+    secure: "${FIREBASE_TOKEN}"
