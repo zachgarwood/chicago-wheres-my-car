@@ -4,7 +4,7 @@ import attr from 'ember-data/attr';
 
 export default VehicleModel.extend({
   date: Ember.computed.alias('relocatedDate'),
-  relocatedDate: attr('date'), 
+  relocatedDate: attr('date'),
 
   relocatedReason: attr(),
 

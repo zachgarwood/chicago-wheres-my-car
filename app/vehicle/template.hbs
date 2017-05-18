@@ -50,7 +50,7 @@
         </thead>
         <tbody>
             {{#each sortedVehicles as |vehicle|}}
-                <tr>
+                <tr class="vehicle-item">
                     <th>
                         {{#link-to vehicle.modelName vehicle}}
                             {{#if (lte vehicle.licensePlate.length 2)}}

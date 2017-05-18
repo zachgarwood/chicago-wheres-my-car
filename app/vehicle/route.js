@@ -44,7 +44,7 @@ export default Ember.Route.extend({
       relocatedVehicles: this.store.query('relocated-vehicle', relocatedVehicleQuery),
       towedVehicles: this.store.query('towed-vehicle', towedVehicleQuery),
     }).then(function(hash) {
-      let allVehicles = Ember.A();
+      let allVehicles = Ember.A();  // eslint-disable-line
       allVehicles.pushObjects(hash.relocatedVehicles.toArray());
       allVehicles.pushObjects(hash.towedVehicles.toArray());
       return allVehicles;

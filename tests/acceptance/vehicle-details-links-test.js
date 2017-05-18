@@ -3,10 +3,16 @@ import moduleForAcceptance from 'chicago-wheres-my-car/tests/helpers/module-for-
 
 moduleForAcceptance('Acceptance | vehicle details links');
 
-test('visiting /vehicle-details-links', function(assert) {
-  visit('/vehicle-details-links');
+test('vehicle details links', function(assert) {
+  visit('/');
 
   andThen(function() {
-    assert.equal(currentURL(), '/vehicle-details-links');
+    assert.equal(find('.vehicle-item').length, 3);
+
+    click(find('.vehicle-item:first a'));
+  });
+
+  andThen(function() {
+    assert.ok(currentURL().includes('-vehicle'));
   });
 });
